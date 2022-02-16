@@ -45,7 +45,7 @@
     "ssl-express-www": "^3.0.7",
     "urlencode": "^1.1.0",
     "util": "^0.12.4",
-    "sanuwa-npm": "^1.1.8",
+    "sanuwa-npm": "^1.1.8"
   }
   
 }
