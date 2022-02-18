@@ -87,6 +87,17 @@ router.get('/rexdldown', async (req, res) => {
 		res.json(loghandler.error)
 	}
 })
+router.get('/fb', async (req, res) => {
+	let url = req.query.url
+	if (!url) return res.json(loghandler.noturl)
+  if(!isUrl(url)) return res.json(loghandler.nurl)
+	try {
+		scrapper.fbdl(url).then(resu => res.json(resu))
+	} catch (err) {
+		console.log(err)
+		res.json(loghandler.error)
+	}
+})
 router.get('/snapinsta', async (req, res) => {
 	let url = req.query.url
 	if (!url) return res.json(loghandler.noturl)
