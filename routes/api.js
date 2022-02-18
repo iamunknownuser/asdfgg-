@@ -1,6 +1,6 @@
 __path = process.cwd()
 let express = require('express');
-let creator = "Fajar Ihsana"
+let creator = "Sanuwa"
 let axios = require('axios')
 let fs = require('fs')
 let fetch = require('node-fetch');
@@ -64,46 +64,8 @@ loghandler = {
 }
 
 // Downloader
+
 router.get('/tiktok', async (req, res) => {
-	let url = req.query.url
-	if (!url) return res.json(loghandler.noturl)
-  if(!isUrl(url)) return res.json(loghandler.nurl)
-	let result = await tiktok(url)
-	try {
-		res.json({
-			status: 200,
-			creator: `${creator}`,
-			note: 'Jangan Di Tembak Bang',
-			result
-		})
-	} catch (err) {
-		console.log(err)
-		res.json(loghandler.error)
-	}
-})
-router.get('/tikmate', async (req, res) => {
-	let url = req.query.url
-	if (!url) return res.json(loghandler.noturl)
-  if(!isUrl(url)) return res.json(loghandler.nurl)
-	try {
-		scrapper.tiktod(url).then(resu => res.json(resu))
-	} catch (err) {
-		console.log(err)
-		res.json(loghandler.error)
-	}
-})
-router.get('/tiktokder', async (req, res) => {
-	let url = req.query.url
-	if (!url) return res.json(loghandler.noturl)
-  if(!isUrl(url)) return res.json(loghandler.nurl)
-	try {
-		scrapper.tiktokder(url).then(resu => resu.username != '' ? res.json(resu) : res.json(loghandler.error))
-	} catch (err) {
-		console.log(err)
-		res.json(loghandler.error)
-	}
-})
-router.get('/dddtik', async (req, res) => {
 	let url = req.query.url
 	if (!url) return res.json(loghandler.noturl)
   if(!isUrl(url)) return res.json(loghandler.nurl)
